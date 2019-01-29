@@ -1,0 +1,300 @@
+<! doctype html>
+
+<head>
+    <link rel="stylesheet" href="../static/styles/purchase.css">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='./styles/purchase.css')}}">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=K2D|Open+Sans|Poppins');
+
+    body {
+        margin: 0;
+        padding: 0;
+        /*    background-color: #E4EFF8;*/
+        display: flex;
+    }
+
+
+    *:focus {
+        outline: none;
+    }
+
+    .input {
+        /*    padding: 20px;*/
+        height: 100%;
+        width: 50%;
+        background-color: #96AFB8;
+        overflow: auto;
+    }
+
+    #datainput1 {
+        position: relative;
+        text-align: center;
+        left: 27%;
+        width: 40%;
+        padding: 20px;
+        padding-bottom: 0;
+        background-color: #73E2CF;
+        /*    margin-bottom: 50px;*/
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .formy1 {
+        margin-bottom: 5px;
+        text-align: center;
+        font-family: 'poppins', sans-serif;
+        height: 30px;
+        border: 2px solid black;
+        /*    padding: 20px;*/
+        width: 100%;
+    }
+
+    .bu1 {
+        font-family: 'poppins', serif;
+        margin-top: 20px;
+        margin-bottom: 0;
+        background: none;
+        border: 3px solid black;
+        width: 100px;
+        height: 40px;
+        transition-duration: 0.5s;
+        border-radius: 20px;
+        box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .bu1:hover {
+        background-color: black;
+        color: floralwhite;
+        box-shadow: none;
+    }
+
+    h3 {
+        margin: 0;
+        margin-bottom: 20px;
+    }
+
+    #datainput2 {
+        font-family: 'K2D', sans-serif;
+        width: 40%;
+        background-color: #73E2CF;
+        padding: 20px;
+        text-align: center;
+        position: relative;
+        left: 27%;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+
+    .bu2 {
+        margin-top: 10px;
+        background: none;
+        width: 100px;
+        border: 1px solid black;
+        height: 30px;
+        border-radius: 50px;
+        /*    text-transform: uppercase;*/
+    }
+
+    #datainput3 {
+        margin-bottom: 20px;
+        width: 40%;
+        background-color: #73E2CF;
+        position: relative;
+        left: 27%;
+        padding: 20px;
+        text-align: center;
+    }
+
+    #datainput4 {
+        width: 40%;
+        background-color: #73E2CF;
+        padding: 20px;
+        text-align: center;
+        margin-bottom: 20px;
+        position: relative;
+        left: 27%;
+    }
+
+    .output {
+        background-color: #99A3A4;
+        text-align: center;
+        width: 50%;
+    }
+
+    table {
+        width: 90%;
+        position: relative;
+        left: 5%;
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    td,
+    th {
+        text-align: center;
+        padding: 5px;
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+
+
+
+
+
+    #bu1 {
+        font-family: 'poppins', serif;
+        margin-top: 20px;
+        margin-bottom: 0;
+        background: none;
+        border: 3px solid black;
+        width: 100px;
+        height: 40px;
+        transition-duration: 0.5s;
+        border-radius: 20px;
+        box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    #bu1:hover {
+        background-color: black;
+        color: floralwhite;
+        box-shadow: none;
+    }
+
+    .but1 {
+        position: relative;
+        left: 42%;
+        height: 30px;
+        width: 100px;
+        border-radius: 20px;
+        border: 2px solid black;
+    }
+
+</style>
+
+<body>
+    <section class='input'>
+        <div id="datainput1">
+            <h3>insertion form</h3>
+            <form action="/purchase/insert" method="post">
+                <input class="formy1" type="text" name="pdate" placeholder="purchase" autocomplete="off"><br>
+                <input class="formy1" type="number" name="rnum" placeholder="repair" autocomplete="off"><br>
+                <input class="formy1" type="text" name="comname" placeholder="insurance" autocomplete="off"><br>
+                <input class="formy1" type="text" name="credit" placeholder="sales" autocomplete="off">
+
+                <!--
+                <input class="formy1" type="text" name="pdate" placeholder="purchase date" autocomplete="off"><br>
+                <input class="formy1" type="number" name="rnum" placeholder="registration number" autocomplete="off"><br>
+                <input class="formy1" type="text" name="comname" placeholder="company name" autocomplete="off"><br>
+                <input class="formy1" type="text" name="credit" placeholder="credit facilities" autocomplete="off"><br>
+                <input class="formy1" type=text name="lic" placeholder="license" autocomplete="off"><br/>
+                <input class="formy1" type=text name="carmodel" placeholder="carmodel" autocomplete="off"><br/>
+                <input class="formy1" type=number name="price" placeholder="price" autocomplete="off"><br/>
+-->
+                <button id="bu1" type="submit">submit</button>
+            </form>
+            <span style="font-family: fantasy; color: crimson">{{ value1 }}</span>
+        </div>
+
+        <div id="datainput2">
+            <h3>query form</h3>
+            <form action="/purchase/get1" method="post">
+                <input class="formy1" type="number" name="qid" placeholder="customer id">
+                <button class="bu2" type="submit">submit</button>
+            </form>
+        </div>
+
+        <form action="/purchase/all" method='post'>
+            <button class="but1">GET ALL</button>
+        </form>
+    </section>
+    <section class="output">
+        <h2>output appears here</h2>
+        <table>
+            <tr>
+                <th>Purchase</th>
+                <th>repair</th>
+                <th>insurance</th>
+                <th>sales</th>
+            </tr>
+            <tr>
+                <th>750000</th>
+                <th>yes</th>
+                <th>10000</th>
+                <th>525</th>
+            </tr>
+            <tr>
+                <th>1093333</th>
+                <th>yes</th>
+                <th>25000</th>
+                <th>249</th>
+            </tr>
+            <tr>
+                <th>258008</th>
+                <th>yes</th>
+                <th>45000</th>
+                <th>149</th>
+            </tr>
+            <tr>
+                <th>950000</th>
+                <th>yes</th>
+                <th>75000</th>
+                <th>325</th>
+            </tr>
+        </table>
+<!--
+        <table>
+            <tr>
+                <th>purchase date</th>
+                <th>registration number</th>
+                <th>company name</th>
+                <th>credit facilities</th>
+                <th>license number</th>
+                <th>car model</th>
+                <th>price</th>
+
+            </tr>
+            <tr>
+                <th>29/05/2018</th>
+                <th>4579126</th>
+                <th>Hyndai</th>
+                <th>yes</th>
+                <th>3459hf31</th>
+                <th>i20</th>
+                <th>750000</th>
+            </tr>
+            <tr>
+                <th>29/05/2018</th>
+                <th>565426</th>
+                <th>chevrolet</th>
+                <th>yes</th>
+                <th>3459hf31</th>
+                <th>beat</th>
+                <th>550000</th>
+            </tr>
+            <tr>
+                <th>29/05/2018</th>
+                <th>497526</th>
+                <th>Mahindra</th>
+                <th>yes</th>
+                <th>234589b</th>
+                <th>scorpio</th>
+                <th>950000</th>
+            </tr>
+            {% for x in out %}
+            <tr>
+                <td>{{ x[0] }}</td>
+                <td>{{ x[1] }}</td>
+                <td>{{ x[2] }}</td>
+                <td>{{ x[3] }}</td>
+                <td>{{ x[4] }}</td>
+                <td>{{ x[5] }}</td>
+                <td>{{ x[6] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+-->
+    </section>
+</body>
+<html>

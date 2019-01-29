@@ -1,0 +1,112 @@
+<! doctype html>
+
+<head>
+   <link rel="stylesheet" href="../static/styles/materials.css">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='./styles/customers.css')}}">
+</head>
+<style>
+    h2{
+        
+    }
+    .bu1{
+            font-family: 'roboto', serif;
+            margin-top: 20px;
+            margin-bottom: 0;
+            background: none;
+            font-size: 16px;
+            border:1.5px solid black;
+            width: 100px;
+            height:40px;
+            transition-duration: 0.5s;
+            border-radius:5px;
+            box-shadow: 0px 17px 10px -10px rgba(0,0,0,0.4)
+        }
+
+        .bu1:hover{
+            font-size: 16px;
+            background-color: black;
+            color:floralwhite;
+            box-shadow:none;
+        }
+    .but1{
+        position: relative;
+        left:42%;
+        height:30px;
+        width:100px;
+        border-radius: 5px;
+        border:2px solid black;
+    }
+    </style>
+
+<body>
+    <section class='input'>
+        <div id="datainput1">
+            <h3>Insert into table</h3>
+            <form action="/customer/insert" method="post">
+                <input class="formy1" type="number" name="cid" placeholder="customer id" autocomplete="off"><br>
+                <input class="formy1" type="text" name="cname" placeholder="custmer name" autocomplete="off"><br>
+                <input class="formy1" type=number name="cph" placeholder="phone num" autocomplete="off"><br>
+                <input class="formy1" type=text name="cadd" placeholder="address" autocomplete="off"><br>
+                <input class="formy1" type=text name="lic" placeholder="license" autocomplete="off"><br/>
+                <button class="bu1" type="submit">submit</button>
+            </form>
+            <span style="font-family: roboto; color: black">{{ value1 }}</span>
+        </div>
+        <div id="datainput2">
+            <h3>Query</h3>
+            <form action="/customer/get1" method="post">
+                <input class="formy1" type="number" name="qid" placeholder="customer id">
+                <button class="bu1" type="submit">submit</button>
+            </form>
+        </div>
+        <div id="datainput3">
+            <h3>Update The Table</h3>
+            <form action="/customer/update" method="post">
+                <input class="formy1" type="number" name="upid" placeholder="customer id">
+                <span>enter the details below to update</span>
+                <input class="formy1" type="text" name="upname" placeholder="customer name" autocomplete="off"><br>
+                <input class="formy1" type=number name="upph" placeholder="customer phno" autocomplete="off"><br>
+                <input class="formy1" type=text name="upadd" placeholder="address" autocomplete="off"><br>
+                <input class="formy1" type=text name="uplic" placeholder="license" autocomplete="off"><br>
+                <button class="bu1" type="submit">submit</button>
+            </form>
+            <span style="font-family: roboto; color: black">{{ value2 }}</span>
+        </div>
+        <div id="datainput4">
+            <h3>Delete from Table</h3>
+            <form action="/customer/delete" method="post">
+                <input class="formy1" type="number" name="did" placeholder="customer id">
+                <button class="bu1" type="submit">submit</button>
+            </form>
+            <span style="font-family: roboto; color: black">{{ value3 }}</span>
+        </div>
+        
+        <form action="/customer/all" method='post'>
+            <button class="but1">GET ALL</button>
+        </form>
+        
+    </section>
+    <section class="output">
+        <h2>Table</h2>
+        <table>
+            <tr>
+                <th>customer id</th>
+                <th>custname</th>
+                <th>custphn</th>
+                <th>custaddress</th>
+                <th>license num</th>
+                
+            </tr>
+            {% for x in out %}
+            <tr>
+                <td>{{ x[4] }}</td>
+                <td>{{ x[0] }}</td>
+                <td>{{ x[1] }}</td>
+                <td>{{ x[2] }}</td>
+                <td>{{ x[3] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </section>
+</body>
+<html>

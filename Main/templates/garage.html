@@ -1,0 +1,81 @@
+<! doctype html>
+
+<head>
+   <link rel="stylesheet" href="../static/styles/materials.css">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='./styles/garage.css')}}">
+</head>
+<style>
+    #bu1{
+            font-family: 'poppins', serif;
+            margin-top: 20px;
+            margin-bottom: 0;
+            background: none;
+            border:3px solid black;
+            width: 100px;
+            height:40px;
+            transition-duration: 0.5s;
+            border-radius: 20px;
+            box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.5);
+        margin-bottom: 20px;
+        }
+
+        #bu1:hover{
+            background-color: black;
+            color:floralwhite;
+            box-shadow:none;
+        }
+    .but1{
+        position: relative;
+        left:42%;
+        height:30px;
+        width:100px;
+        border-radius: 20px;
+        border:2px solid black;
+    }
+    </style>
+
+<body>
+    <section class='input'>
+        <div id="datainput1">
+            <h3>insertion form</h3>
+            <form action="/garage/insert" method="post">
+                <input class="formy1" type="text" name="matnum" placeholder="gname" autocomplete="off"><br>
+                <input class="formy1" type="text" name="matname" placeholder="address" autocomplete="off"><br>
+                <input class="formy1" type="text" name="matcost" placeholder="service" autocomplete="off"><br>
+                <button id="bu1" type="submit">submit</button>
+            </form>
+            <span style="font-family: fantasy; color: crimson">{{ value1 }}</span>
+        </div>
+        
+        <div id="datainput2">
+            <h3>query form</h3>
+            <form action="/garage/get1" method="post">
+                <input class="formy1" type="number" name="qid" placeholder="material id">
+                
+                <button class="bu2" type="submit">submit</button>
+            </form>
+        </div>
+        
+        <form action="/garage/all" method='post'>
+            <button class="but1">GET ALL</button>
+        </form>
+    </section>
+    <section class="output">
+        <h2>output appears here</h2>
+        <table>
+            <tr>
+                <th>gname</th>
+                <th>address</th>
+                <th>service</th>
+            </tr>
+            {% for x in out %}
+            <tr>
+                <td>{{ x[0] }}</td>
+                <td>{{ x[1] }}</td>
+                <td>{{ x[2] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </section>
+</body>
+<html>

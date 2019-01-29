@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="{{url_for('static',filename='styles/login.css')}}" type="text/css">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+	<title> Title </title>
+</head>
+    <body>
+        
+        <section class="log">
+            <div class="login">
+                <h3>new user form</h3>
+                <form action="/into" method="post">
+                    <div class="a"><input class="inp" type="text" name="user" autocomplete="off" placeholder=" new username"></div>
+                    <div class="a"><input class="inp" type="password" name="pass" autocomplete="off" placeholder="new password"></div>
+                    <div><input id="button" type="submit" name="submit" value="log on"></div>
+                </form>
+            </div>
+        </section>
+        
+    </body>
+</html>

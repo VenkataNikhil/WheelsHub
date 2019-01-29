@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/home.css')}}">
+    <title> Home </title>
+</head>
+
+<body>
+
+    <section id="main-sec">
+        
+        <h2>Car Rental and Co.</h2>
+        <section id="sub-sec">
+
+            <form action="/customer" action='post'>
+                <button class="main">customer</button>
+            </form>
+            <form action="/car" action='post'>
+                <button class="main">car</button>
+            </form>
+            <form action="/expenditure" action='post'>
+                <button class="main">expenditure</button>
+            </form>
+            <form action="/garage" action='post'>
+                <button class="main">garage </button>
+            </form>
+            <form action="/purchase" action='post'>
+                <button class="main">purchase</button>
+            </form>
+        </section>
+
+    </section>
+
+</body>
+
+</html>

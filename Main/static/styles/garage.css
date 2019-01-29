@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css?family=K2D|Open+Sans|Poppins');
+
+body{
+    margin:0;
+    padding: 0;
+/*    background-color: #E4EFF8;*/
+    display: flex;
+}
+
+
+*:focus{
+    outline: none;
+}
+
+.input{
+/*    padding: 20px;*/
+    height:100%;
+    width:50%;
+    background-color: #96AFB8;
+    overflow:auto;
+}
+#datainput1{
+    position: relative;
+    text-align: center;
+    left:27%;
+    width: 40%;
+    padding: 20px;
+    padding-bottom: 0;
+    background-color:#73E2CF ;
+/*    margin-bottom: 50px;*/
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.formy1{
+    margin-bottom: 5px;
+    text-align: center;
+    font-family: 'poppins', sans-serif;
+    height: 30px;
+    border: 2px solid black;
+/*    padding: 20px;*/
+    width:100%;
+}
+
+.bu1{
+    font-family: 'poppins', serif;
+    margin-top: 20px;
+    margin-bottom: 0;
+    background: none;
+    border:3px solid black;
+    width: 100px;
+    height:40px;
+    transition-duration: 0.5s;
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.5);
+}
+
+.bu1:hover{
+    background-color: black;
+    color:floralwhite;
+    box-shadow:none;
+}
+
+h3{
+    margin:0;
+    margin-bottom: 20px;
+}
+
+#datainput2{
+    font-family: 'K2D', sans-serif;
+    width: 40%;
+    background-color: #73E2CF;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    left:27%;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.bu2{
+    margin-top: 10px;
+    background: none;
+    width:100px;
+    border:1px solid black;
+    height:30px;
+    border-radius: 50px;
+/*    text-transform: uppercase;*/
+}
+
+#datainput3{
+    margin-bottom: 20px;
+    width: 40%;
+    background-color: #73E2CF;
+    position: relative;
+    left:27%;
+    padding: 20px;
+    text-align: center;
+}
+
+#datainput4{
+    width:40%;
+    background-color: #73E2CF;
+    padding: 20px;
+    text-align: center;
+    margin-bottom:20px;
+    position: relative;
+    left:27%;
+}
+
+.output{
+    background-color: #99A3A4;
+    text-align: center;
+    width:50%;
+}
+table{
+    width:90%;
+    position: relative;
+    left:5%;
+    border:1px solid black;
+    border-collapse: collapse;
+}
+td,th{
+    text-align: center;
+    padding: 5px;
+    border:1px solid black;
+    border-collapse: collapse;
+}
+
+
+
+
+

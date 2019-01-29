@@ -1,0 +1,34 @@
+create table cusotmer
+(
+custname char(20),
+custphn integer,
+custaddress char(30),
+license integer primarykey);
+create table purchase
+(
+purchasedate date,
+regdno integer primarykey,
+modle char(20),
+price integer,
+companyname char(30));
+create table garage 
+(
+name char(20),
+adress char(20),
+service char(20));
+create table expenditure
+(
+purchase integer,
+repair integer,
+insurance integer,
+sales integer);
+create table car
+(
+make char(20),
+model char(20),
+engine char(20),
+fuel char(20),
+noofpass integer,
+regesdno integer primarykey,
+forigen key(regesdno) references purchase(regedno)
+);
