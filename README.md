@@ -1,4 +1,4 @@
-**WheelsHub**<br>
+**WheelsHub - One-stop platform for Managing Car Rentals** <br>
 WheelsHub is an online car rental booking web application with Flask and MySQL database integrated via ORM-based object models.
 
 
